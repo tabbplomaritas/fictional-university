@@ -47,6 +47,36 @@ function university_post_types(){
     'menu_icon' => 'dashicons-welcome-learn-more' 
   ));
 
+  register_post_type('community', array(
+    'supports' => array('title', 'editor'),
+    'rewrite' => array('slug' => 'communities'),
+    'has_archive' => true,
+    'public' => true,
+    'labels' => array(
+      'name' => 'Communities',
+      'add_new_item' => 'Add New Community',
+      'edit_item' => 'Edit Community',
+      'all_items' => 'All Communities',
+      'singular_name' => 'Community'
+      ),
+    'menu_icon' => 'dashicons-rest-api' 
+  ));
+
+  register_post_type('student', array(
+    'supports' => array('title', 'editor'),
+    'rewrite' => array('slug' => 'students'),
+    'has_archive' => true,
+    'public' => true,
+    'labels' => array(
+      'name' => 'Students',
+      'add_new_item' => 'Add New Student',
+      'edit_item' => 'Edit Student',
+      'all_items' => 'All Students',
+      'singular_name' => 'Student'
+      ),
+    'menu_icon' => 'dashicons-welcome-learn-more' 
+  ));
+
 }
 
 add_action('init', 'university_post_types');

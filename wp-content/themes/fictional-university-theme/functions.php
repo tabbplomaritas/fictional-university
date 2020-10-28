@@ -3,8 +3,6 @@
 function university_files() {
 //	handle, file, dependencies, version, in footer boolean
  if (strstr($_SERVER['SERVER_NAME'], 'fictional-university')) {
-  echo 'server is: ';
-  echo $_SERVER['SERVER_NAME'];
     wp_enqueue_script('main-university-js', 'http://localhost:3000/bundled.js', NULL, '1.0', true);
   } else {
    echo $_SERVER['SERVER_NAME'];
@@ -27,10 +25,16 @@ function university_features() {
 }
 
 function university_adjust_queries($query){
+  if (!is_admin() AND is_post_type_archive('community') AND is_main_query()){
+    $query->set('orderby', 'title');
+    $query->set('order', 'ASC');
+    $query->set('posts_per_page', -1);
+  }
+
   if(!is_admin() AND is_post_type_archive('program') AND $query->is_main_query()) {
     $query->set('orderby', 'title');
     $query->set('order', 'ASC');
-    $query->set('postts_per_page', -1);
+    $query->set('posts_per_page', -1);
   }
  
   if(!is_admin() AND is_post_type_archive('event') AND $query->is_main_query()){
