@@ -75,8 +75,8 @@ if (currentTask == "devFast") {
   cssConfig.use.unshift("style-loader")
   config.output = {
     filename: "bundled.js",
-    publicPath: "http://localhost:80/amazingcollege/"
-  }
+    publicPath: "http://localhost:3000/",
+  };
   config.devServer = {
     before: function (app, server) {
       /*
@@ -94,19 +94,19 @@ if (currentTask == "devFast") {
         */
 
       // server._watch(["./**/*.php", "./**/*.js"])
-      server._watch(["./**/*.php", "!./functions.php"])
+      server._watch(["./**/*.php", "!./functions.php"]);
     },
-    public: "http://localhost:80/amazingcollege",
-    publicPath: "http://localhost:80/amazingcollege/",
+    public: "http://localhost:3000/",
+    publicPath: "http://localhost:3000/",
     disableHostCheck: true,
     contentBase: path.join(__dirname),
-    contentBasePublicPath: "http://localhost:80/amazingcollege/",
+    contentBasePublicPath: "http://localhost:3000/",
     hot: true,
-    port: 80,
+    port: 3000,
     headers: {
-      "Access-Control-Allow-Origin": "*"
-    }
-  }
+      "Access-Control-Allow-Origin": "*",
+    },
+  };
   config.mode = "development"
 }
 
