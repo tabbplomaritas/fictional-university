@@ -48,7 +48,7 @@ function university_post_types(){
   ));
 
   register_post_type('community', array(
-    'supports' => array('title', 'editor'),
+    'supports' => array('title', 'editor', 'thumbnail'),
     'rewrite' => array('slug' => 'communities'),
     'has_archive' => true,
     'public' => true,
@@ -63,7 +63,7 @@ function university_post_types(){
   ));
 
   register_post_type('student', array(
-    'supports' => array('title', 'editor'),
+    'supports' => array('title', 'editor', 'thumbnail'),
     'rewrite' => array('slug' => 'students'),
     'has_archive' => true,
     'public' => true,

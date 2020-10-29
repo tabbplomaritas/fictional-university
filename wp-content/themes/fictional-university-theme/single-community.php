@@ -24,6 +24,31 @@ while(have_posts()) {
       <?php the_content(); ?>
     </div>
 
+     <?php 
+
+      $studentMembers = get_field('student_members');
+
+      if ($studentMembers) {
+        echo '<hr class="section-break">';
+        echo '<h2 class="healine headline--medium">Student Members</h2>';
+        echo '<ul class="professor-cards">';
+        foreach($studentMembers as $student) {  ?>
+          <li class="professor-card__list-item">
+            <a class="professor-card" href="<?php echo get_the_permalink($student); ?>">
+              <img class="professor-card__image" src="<?php echo get_the_post_thumbnail($student); ?>" alt="">
+              <span class="professor-card__name"><?php echo get_the_title($student); ?></span>
+            </a>
+          </li>
+          
+         
+          
+          <?php 
+        }
+        echo '</ul>';    
+      }
+
+        ?>
+
     <?php 
 
     $relatedProfessors = new WP_Query(array(
