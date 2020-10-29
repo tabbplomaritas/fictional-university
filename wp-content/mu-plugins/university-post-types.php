@@ -74,7 +74,7 @@ function university_post_types(){
       'all_items' => 'All Students',
       'singular_name' => 'Student'
       ),
-    'menu_icon' => 'dashicons-welcome-learn-more' 
+    'menu_icon' => 'dashicons-universal-access-alt' 
   ));
 
 }

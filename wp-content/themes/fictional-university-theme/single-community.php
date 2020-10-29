@@ -35,18 +35,16 @@ while(have_posts()) {
         foreach($studentMembers as $student) {  ?>
           <li class="professor-card__list-item">
             <a class="professor-card" href="<?php echo get_the_permalink($student); ?>">
-              <img class="professor-card__image" src="<?php echo get_the_post_thumbnail($student); ?>" alt="">
+            <img class="professor-card__image" src="<?php echo get_the_post_thumbnail_url($student);?>">
+    
               <span class="professor-card__name"><?php echo get_the_title($student); ?></span>
             </a>
           </li>
-          
-         
-          
+        
           <?php 
         }
         echo '</ul>';    
       }
-
         ?>
 
     <?php 
@@ -75,13 +73,13 @@ while(have_posts()) {
     <?php }
   }
 
-      $relatedPrograms = get_field('related_programs');
-      if($relatedPrograms){
+      $communityEvents = get_field('community_events');
+      if($communityEvents){
         echo '<hr class="section-break">';
-        echo '<h2 class="headline headline--medium">Related Programs</h2>';
+        echo '<h2 class="headline headline--medium">Community Events</h2>';
         echo '<ul class="link-list min-list">';
-        foreach($relatedPrograms as $program){ ?>
-          <li><a href="<?php echo get_the_permalink($program); ?>"><?php echo get_the_title($program); ?></a></li>
+        foreach($communityEvents as $event){ ?>
+          <li><a href="<?php echo get_the_permalink($event); ?>"><?php echo get_the_title($event); ?></a></li>
 
         <?php }
           echo '</ul>';
