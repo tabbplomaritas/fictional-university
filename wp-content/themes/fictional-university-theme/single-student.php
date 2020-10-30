@@ -58,12 +58,9 @@ while(have_posts()) {
                 <span class="professor-card__name"><?php the_title(); ?></span>
               </a>
             </li>    
-            
             <?php }
           echo ' </ul> ';
            ?>
-
-
 <?php }
 
 get_footer();
