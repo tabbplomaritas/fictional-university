@@ -8,7 +8,8 @@
     "devFast": "webpack-dev-server",
     "buildWatch": "webpack --watch",
     "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier"
   },
   "keywords": [],
   "author": "",
@@ -43,5 +44,9 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-manifest-plugin": "^2.2.0"
+  },
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.15.2",
+    "prettier": "^2.1.2"
   }
 }
