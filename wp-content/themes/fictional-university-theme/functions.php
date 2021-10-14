@@ -33,7 +33,6 @@ function pageBanner($args = NULL) {
 
 function university_files() {
 //	handle, file, dependencies, version, in footer boolean
- wp_enqueue_script('googleMap', '//maps.googleapis.com/maps/api/js?key=yourKeyHere', NULL, '1.0', true);
 
   wp_enqueue_script('main-university-js', get_theme_file_uri('/build/index.js'), array('jquery'), '1.0', true);
 
