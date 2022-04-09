@@ -11,7 +11,7 @@ register_post_type('campus', array(
       'name' => 'Campuses',
       'add_new_item' => 'Add New Campus',
       'edit_item' => 'Edit Campus',
-      'all_items' => 'All Campuss',
+      'all_items' => 'All Campus',
       'singular_name' => 'Campus'
       ),
     'menu_icon' => 'dashicons-location-alt',
@@ -37,7 +37,8 @@ register_post_type('campus', array(
   
   // Program Post Type
   register_post_type('program', array(
-    'supports' => array('title', 'editor'),
+    'show_in_rest' => true,
+    'supports' => array('title'),
     'rewrite' => array('slug' => 'programs'),
     'has_archive' => true,
     'public' => true,
@@ -53,7 +54,10 @@ register_post_type('campus', array(
 
   // Professor Post Type
   register_post_type('professor', array(
+    'show_in_rest' => true,
     'supports' => array('title', 'editor', 'thumbnail'),
+    'has_archive' => true,
+    'rewrite' => array('slug' => 'professors'),
     'public' => true,
     'labels' => array(
       'name' => 'Professors',
@@ -81,6 +85,7 @@ register_post_type('campus', array(
   ));
 
   register_post_type('student', array(
+    'show_in_rest' => true,
     'supports' => array('title', 'editor', 'thumbnail'),
     'rewrite' => array('slug' => 'students'),
     'has_archive' => true,

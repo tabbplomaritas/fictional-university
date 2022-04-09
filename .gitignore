@@ -2,3 +2,5 @@
 /wp-content/themes/fictional-university-theme/node_modules
 /uploads
 /wp-content/uploads
+debug.log
+.DS_Store

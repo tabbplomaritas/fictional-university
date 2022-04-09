@@ -14,7 +14,7 @@ while (have_posts()) {
         ); ?>"><i class="fa fa-home" aria-hidden="true"></i> All Programs</a> <span class="metabox__main"><?php the_title(); ?></span></p>
       </div>
     <div class="generic-content">
-      <?php the_content(); ?>
+      <?php the_field('main_body_content'); ?>
     </div>
 
     <?php
